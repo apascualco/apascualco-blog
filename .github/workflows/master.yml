@@ -4,9 +4,6 @@ on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./src
 
     steps:
       - name: Checkout 🛎️
@@ -22,8 +19,8 @@ jobs:
 
       - name: Install and Build 🔧 #
         uses: actions/setup-node@v1
-      - run: npm install
-      - run: npm run build
+      - run: yarn install
+      - run: yarn run build
         env:
             CI: true
 
