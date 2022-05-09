@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v2
       - run: yarn install
       - run: yarn run export
+      - run: touch out/.nojekyll
       - run: ls
         env:
             CI: true
